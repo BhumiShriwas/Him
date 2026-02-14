@@ -4,13 +4,11 @@ const bgm=document.getElementById("bgm");
 const typedText=document.getElementById("typed-text");
 const sparkContainer=document.querySelector(".spark-container");
 
-/* 🎵 Start music once */
 document.body.addEventListener("click",()=>{
   bgm.volume=0.4;
   bgm.play();
 },{once:true});
 
-/* ✨ Create sparks */
 function createSpark(){
   const spark=document.createElement("div");
   spark.classList.add("spark");
@@ -21,7 +19,6 @@ function createSpark(){
 }
 setInterval(createSpark,200);
 
-/* 🌹 Create curtain flowers */
 function createFlower(){
   const flower=document.createElement("div");
   flower.classList.add("flower");
@@ -33,7 +30,6 @@ function createFlower(){
 }
 for(let i=0;i<100;i++){createFlower();}
 
-/* 🪄 Remove curtain */
 curtain.addEventListener("click",()=>{
   curtain.style.transition="1.5s";
   curtain.style.opacity="0";
@@ -42,7 +38,6 @@ curtain.addEventListener("click",()=>{
   typeWriter();
 });
 
-/* 🖋 Typewriter */
 const message=`
 May God protect you everywhere, every minute and every second.
 
@@ -70,9 +65,9 @@ function typeWriter(){
   }
 }
 
-/* 💥 Golden Blessing Burst */
 function blessingBurst(){
   for(let i=0;i<50;i++){
     createSpark();
   }
 }
+
